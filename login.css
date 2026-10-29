@@ -1,0 +1,282 @@
+:root {
+    --primary-color: #1a9db4;
+    --primary-dark: #0b7187bd;
+    --secondary-color: #63aee4;
+    --light-color: #bfd4e9;
+    --dark-color: #212529;
+    --gray-color: #6c757d;
+    --light-gray: #e9ecef;
+    --success-color: #4bb543;
+    --error-color: #ff3333;
+    --border-radius: 16px;
+    --box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all var(--transition-speed) ease;
+}
+
+html,
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    background: #01090fd5 radial-gradient(circle at 10% 20%,
+            rgba(67, 97, 238, 0.15) 0%,
+            rgba(76, 201, 240, 0.15) 90%);
+    color: var(--dark-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 600px;
+    max-height: 1100px;
+    height: 95%;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    max-width: 400px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 30px 20px;
+    min-height: 500px;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.plp-branding {
+    text-align: center;
+    background: #fff;
+    border-bottom: 1px solid var(--light-gray);
+    padding: 0.75rem 0;
+    margin: 1rem;
+}
+
+.plp-logo-container {
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+}
+
+.plp-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.plp-logo:hover {
+    transform: rotate(360deg) scale(1.05);
+    transition: transform 0.6s ease;
+}
+
+.school-name {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin: 0.25rem 0;
+    font-size: 1.25rem;
+}
+
+.system-name {
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.auth-header {
+    width: 100%;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-dark));
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.auth-header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.auth-header p {
+    opacity: 0.95;
+    font-size: 0.85rem;
+}
+
+.auth-form {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: var(--dark-color);
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.form-control {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8rem;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background: var(--light-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.25);
+    outline: none;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 1rem auto 0 auto;
+}
+
+.login-btn {
+    background: linear-gradient(135deg,
+            var(--primary-color),
+            var(--primary-dark));
+    color: #fff;
+    margin-top: 0.75rem;
+    box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--gray-color);
+}
+
+.auth-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+    color: var(--primary-dark);
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+    margin-left: 0;
+    display: block;
+    text-align: left;
+    width: 100%;
+    max-width: 400px;
+    margin: 0.3rem auto 0 auto;
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.password-input-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--gray-color);
+    z-index: 2;
+}
+
+.toggle-password:hover {
+    color: var(--primary-color);
+}

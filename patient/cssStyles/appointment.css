@@ -1,0 +1,540 @@
+.main-content {
+  margin-left: 38vh;
+  padding: 1rem;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  position: relative;
+  z-index: 1;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.appointment-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.appointment-container h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-bar {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.create-btn {
+  background-color: #23325a;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.create-btn:hover {
+  background-color: #3e5bac;
+}
+
+.table-container {
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin-bottom: 30px;
+  max-height: calc(5 * 48px + 48px + 56px);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.table-container::-webkit-scrollbar {
+  display: none;
+}
+
+.table-container h2 {
+  color: #23325a;
+  margin: 0;
+  font-size: 1.3rem;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 3;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.appointment-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.appointment-table th {
+  background-color: #23325a;
+  padding: 12px 15px;
+  text-align: left;
+  color: white;
+  font-weight: 600;
+  position: sticky;
+  top: 56px;
+  z-index: 2;
+}
+
+.appointment-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  word-wrap: break-word;
+  vertical-align: top;
+  position: relative;
+  z-index: 1;
+}
+
+.appointment-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+.appointment-table th:nth-child(1),
+.appointment-table td:nth-child(1) {
+  width: 12%;
+}
+
+.appointment-table th:nth-child(2),
+.appointment-table td:nth-child(2) {
+  width: 15%;
+}
+
+.appointment-table th:nth-child(3),
+.appointment-table td:nth-child(3) {
+  width: 15%;
+}
+
+.appointment-table th:nth-child(4),
+.appointment-table td:nth-child(4) {
+  width: 15%;
+}
+
+.appointment-table th:nth-child(5),
+.appointment-table td:nth-child(5) {
+  width: 10%;
+}
+
+.appointment-table th:nth-child(6),
+.appointment-table td:nth-child(6) {
+  width: 23%;
+  min-width: 150px;
+}
+
+.appointment-table th:nth-child(7),
+.appointment-table td:nth-child(7) {
+  width: 10%;
+  text-align: center;
+}
+
+.appointment-table td:nth-child(6) {
+  white-space: normal;
+  overflow: visible;
+  min-height: 50px;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-approved {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-reschedule {
+  background-color: #cce5ff;
+  color: #004085;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.status-followup {
+  background-color: #e2e3e5;
+  color: #383d41;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.no-appointments {
+  text-align: center;
+  padding: 30px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.appointment-table button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 80px;
+}
+
+.appointment-table button:not([name]) {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.appointment-table button:not([name]):hover {
+  background-color: #c0392b;
+}
+
+.appointment-table button[onclick*="openResched"] {
+  background-color: #3498db;
+  color: white;
+}
+
+.appointment-table button[onclick*="openResched"]:hover {
+  background-color: #2980b9;
+}
+
+.appointment-table button[onclick*="openCancel"] {
+  background-color: #f39c12;
+  color: white;
+}
+
+.appointment-table button[onclick*="openCancel"]:hover {
+  background-color: #d35400;
+}
+
+.appointment-table button i {
+  font-size: 0.9rem;
+}
+
+#createAppointment {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  background: white;
+}
+
+#createAppointment::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#createAppointment h2 {
+  color: #23325a;
+  margin: 0;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+#createAppointment form {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#createAppointment label {
+  font-weight: 600;
+  color: #23325a;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+#createAppointment input[type="date"],
+#createAppointment select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+#createAppointment input[type="date"]:focus,
+#createAppointment select:focus {
+  outline: none;
+  border-color: #23325a;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+#createAppointment .button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+#createAppointment button,
+#createAppointment input[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+#createAppointment input[type="submit"] {
+  background-color: #23325a;
+  color: white;
+  border: none;
+}
+
+#createAppointment input[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+#createAppointment button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+#createAppointment button:hover {
+  background-color: #eaeaea;
+}
+
+#cancelDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  background: white;
+}
+
+#cancelDialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#cancelDialog h2 {
+  color: #23325a;
+  margin: 0;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+#cancelDialog form {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#cancel-reason {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+  resize: vertical;
+  min-height: 100px;
+}
+
+#cancelDialog .button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+#cancelDialog button,
+#cancelDialog input[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+#cancelDialog input[type="submit"] {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+#cancelDialog input[type="submit"]:hover {
+  background-color: #c0392b;
+}
+
+#cancelDialog button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+#cancelDialog button:hover {
+  background-color: #eaeaea;
+}
+
+#resched {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  border: none;
+  border-radius: 10px;
+  padding: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  background: white;
+}
+
+#resched::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#resched h2 {
+  color: #23325a;
+  margin: 0;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+#resched form {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#resched-date,
+#resched-time {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+#resched .button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+#resched button,
+#resched input[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+#resched input[type="submit"] {
+  background-color: #3498db;
+  color: white;
+  border: none;
+}
+
+#resched input[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+#resched button {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+#resched button:hover {
+  background-color: #eaeaea;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}

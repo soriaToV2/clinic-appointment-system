@@ -1,0 +1,13 @@
+# Secrets - never commit these
+mail_config.php
+
+# Composer dependencies (run `composer install`)
+/vendor/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log

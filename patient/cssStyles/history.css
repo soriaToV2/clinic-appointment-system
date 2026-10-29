@@ -1,0 +1,80 @@
+.main-content {
+    margin-left: 38vh;
+    padding: 1rem;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    position: relative;
+    z-index: 1;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.history-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.history-container h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.8rem;
+}
+
+.table-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    max-height: calc(12 * 48px + 48px);
+    overflow-y: auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.table-container::-webkit-scrollbar {
+    display: none;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.history-table thead th {
+    background-color: #23325a;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 500;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.history-table tbody td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+}
+
+.history-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.no-history {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}

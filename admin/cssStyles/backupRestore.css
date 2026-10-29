@@ -1,0 +1,339 @@
+:root {
+  --primary: #4a6cf7;
+  --primary-light: #eef2ff;
+  --dark: #1e293b;
+  --light: #f8fafc;
+  --gray: #94a3b8;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --success: #10b981;
+  --dark-card: #2d3748;
+  --dark-border: #4a5568;
+  --dark-bg: #0a0e16;
+  --light-blue: #a2c1f4;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+.main-container {
+  margin-left: 260px;
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-left: 15px;
+}
+
+.backup-restore-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: var(--light);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  transition: var(--transition);
+  border-top: 4px solid var(--primary);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  color: var(--primary);
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.card-body {
+  margin-bottom: 1.5rem;
+}
+
+.card-footer {
+  margin-top: 1.5rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn i {
+  margin-right: 0.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-light);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #d1145a;
+}
+
+.file-input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.file-input:hover {
+  border-color: var(--primary);
+}
+
+.warning-text {
+  color: var(--danger);
+  font-weight: 500;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.warning-text i {
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .backup-restore-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .card-icon {
+    font-size: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .file-input {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .warning-text {
+    font-size: 0.9rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .warning-text i {
+    margin-right: 0;
+  }
+}
+
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--primary);
+}
+
+body.dark-mode .main-container {
+  background-color: var(--dark-bg);
+  color: var(--light-blue);
+}
+
+body.dark-mode .backup-restore-container {
+  background-color: var(--dark-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .page-title {
+  color: var(--light-blue);
+}
+
+body.dark-mode .card {
+  background-color: var(--dark-bg);
+  border-top: 4px solid var(--primary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  background-color: var(--dark);
+}
+
+body.dark-mode .card-icon {
+  color: var(--primary);
+}
+
+body.dark-mode .btn-primary {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+body.dark-mode .btn-primary:hover {
+  background-color: var(--primary-light);
+}
+
+body.dark-mode .btn-danger {
+  background-color: var(--danger);
+  color: var(--light);
+}
+
+body.dark-mode .btn-danger:hover {
+  background-color: #ff6b6b;
+}
+
+body.dark-mode .file-input {
+  background-color: var(--dark-bg);
+  color: var(--primary);
+  border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .file-input:hover {
+  border-color: var(--primary);
+}
+
+body.dark-mode .warning-text {
+  color: var(--danger);
+}
+
+body.dark-mode .warning-text i {
+  color: var(--danger);
+}
+
+body.dark-mode .page-header {
+  border-bottom: 1px solid var(--dark-border);
+}
+
+body.dark-mode .btn {
+  background-color: var(--dark);
+  color: var(--primary);
+  border: 1px solid var(--dark-border);
+}
+
+body.dark-mode .btn:hover {
+  background-color: var(--dark-card);
+  color: var(--primary);
+}
+
+body.dark-mode .btn-backup-now {
+  background-color: var(--dark-card);
+  color: var(--primary);
+  border: 1px solid var(--dark-border);
+  transition: var(--transition);
+}
+
+body.dark-mode .btn-backup-now:hover {
+  background-color: var(--dark);
+  color: var(--primary-light);
+}
+
+body.dark-mode .btn-restore {
+  background-color: var(--dark-card);
+  color: var(--primary);
+  border: 1px solid var(--dark-border);
+  transition: var(--transition);
+}
+
+body.dark-mode .btn-restore:hover {
+  background-color: var(--dark);
+  color: var(--primary-light);
+}
